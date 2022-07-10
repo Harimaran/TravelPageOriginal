@@ -4,6 +4,7 @@ import browserUtility.Browser;
 import browserUtility.PageUtility;
 import io.cucumber.java.en.*;
 import pages.LogInPage;
+import utility.PageAccessor;
 
 public class LogInPageStepDef {
 	
@@ -11,7 +12,7 @@ public class LogInPageStepDef {
 	
 	@When("Enters {string}, {string}")
 	public void enters(String email, String password) throws InterruptedException {
-		logInPage = new LogInPage();
+		logInPage = PageAccessor.getLogInPage();
 		logInPage.enterEmail(email);
 		logInPage.enterPassword(password);
 		
@@ -20,11 +21,7 @@ public class LogInPageStepDef {
 	
 	@When("clicks LogInButton")
 	public void clicks_log_in_button() {
-		
-		if(logInPage == null) {
-		logInPage = new LogInPage();
-		}
-		
+		logInPage = PageAccessor.getLogInPage();
 		logInPage.clickLogInBtn();
 		
 	}

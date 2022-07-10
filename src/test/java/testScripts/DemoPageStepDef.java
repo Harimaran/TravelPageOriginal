@@ -5,6 +5,7 @@ import org.junit.Assert;
 import browserUtility.Browser;
 import io.cucumber.java.en.*;
 import pages.DemoPage;
+import utility.PageAccessor;
 
 public class DemoPageStepDef {
 	
@@ -17,7 +18,7 @@ public class DemoPageStepDef {
 	
 	@Given("User clicks on Sign Up button")
 	public void user_clicks_on_sign_up_button() {
-		if (demoPage == null) { demoPage =  new DemoPage();}
+		demoPage = PageAccessor.getDemoPage();
 		demoPage.clickSignUpBtn();
 	}
 
@@ -30,14 +31,14 @@ public class DemoPageStepDef {
 	
 	@When("User clicks on LogIn button")
 	public void user_clicks_on_log_in_button() {
-		if(demoPage== null) demoPage = new DemoPage();
+		demoPage = PageAccessor.getDemoPage();
 		demoPage.clickLogInButton();
 	}
 	
 	
 	@Then("User should see all the available options")
 	public void user_should_see_all_the_available_options() {
-		if(demoPage== null) demoPage = new DemoPage();
+		demoPage = PageAccessor.getDemoPage();
 		Assert.assertTrue(demoPage.isDemoDisplayed());
 		Assert.assertTrue(demoPage.isPricingDisplayed());
 		Assert.assertTrue(demoPage.isFeatureDisplayed());

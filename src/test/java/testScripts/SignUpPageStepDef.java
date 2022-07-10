@@ -7,6 +7,7 @@ import java.util.Map;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 import pages.SignUpPage;
+import utility.PageAccessor;
 
 public class SignUpPageStepDef {
 
@@ -37,7 +38,7 @@ public class SignUpPageStepDef {
 	@When("User Enters all the required details")
 	public void user_enters_all_the_required_details1(DataTable data) throws InterruptedException {
 		
-		if (signUpPage == null) signUpPage = new SignUpPage();
+		signUpPage = PageAccessor.getSignUpPage();
 		
 		List<Map<String, String>> registrationData = data.asMaps(String.class, String.class);	
 		for(Map<String, String> itr : registrationData) {
