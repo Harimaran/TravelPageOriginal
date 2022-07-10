@@ -1,9 +1,12 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import browserUtility.Browser;
 import browserUtility.PageUtility;
+import browserUtility.WaitUtility;
 import pageObjects.DemoPageObjects;
 
 public class DemoPage{
@@ -69,6 +72,7 @@ public class DemoPage{
 	}
 	
 	public void clickNewsletterSubscription() {
+		WaitUtility.waitUntilWebElementClickable(demo.SubscribeNewsLetter);
 		demo.SubscribeNewsLetter.click();
 	}
 	

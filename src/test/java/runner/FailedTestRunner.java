@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 		glue = "testScripts",
 		dryRun = false,
 		monochrome = true,
-//		tags = "@newsletter",
+//		tags = "@demoReq",
 		plugin= {"html:target/logIn.html", "rerun:target/failedCases/failedInRun.txt"}
 		)
 
