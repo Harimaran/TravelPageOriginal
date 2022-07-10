@@ -6,14 +6,14 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/features",
+		features = "@target/failedCases/failedInRun.txt",
 		glue = "testScripts",
 		dryRun = false,
 		monochrome = true,
 //		tags = "@newsletter",
-		plugin= {"html:target/logIn.html","rerun:target/failedCases/failedInRun.txt"}
+		plugin= {"html:target/logIn.html", "rerun:target/failedCases/failedInRun.txt"}
 		)
 
-public class Runner {
+public class FailedTestRunner {
 
 }

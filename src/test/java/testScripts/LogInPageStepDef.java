@@ -25,6 +25,7 @@ public class LogInPageStepDef {
 		logInPage.clickLogInBtn();
 		
 	}
+	
 	@Then("User should receive error message")
 	public void user_should_be_logged_in_to_user_s_homepage() {
 		Browser.refreshPage();
