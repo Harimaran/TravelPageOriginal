@@ -8,14 +8,17 @@ public class AlertUtility {
 	static WebDriver driver = Browser.driver;
 	
 	public static String getAlertMsg() {
-		Alert alert = driver.switchTo().alert();
-		return alert.getText();
+		String alertMsg = switchToAlert().getText();
+		return alertMsg;
 	}
 	
 	public static void acceptAlert() {
-		Alert alert = driver.switchTo().alert();
-		alert.accept();
+		switchToAlert().accept();
 	}
 	
+	static Alert switchToAlert(){
+		Alert alert = driver.switchTo().alert();
+		return alert;
+	}
 
 }

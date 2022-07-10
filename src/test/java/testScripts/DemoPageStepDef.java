@@ -3,6 +3,8 @@ package testScripts;
 import java.util.Map;
 
 import org.junit.Assert;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import browserUtility.AlertUtility;
 import browserUtility.Browser;
@@ -82,6 +84,9 @@ public class DemoPageStepDef {
 	
 	@Then("Newsletter should be subscribed")
 	public void newsletter_should_be_subscribed() {
+		WebDriverWait wait = new WebDriverWait(Browser.driver, 15);
+		wait.until(ExpectedConditions.alertIsPresent());
+		
 		String actMsg = AlertUtility.getAlertMsg();
 		AlertUtility.acceptAlert();
 		

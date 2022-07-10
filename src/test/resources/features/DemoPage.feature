@@ -9,13 +9,14 @@ Then User should see all the available options
 @newsletter
 Scenario: Validate user can subscribe to Newsletter
 Given User navigates to "https://www.phptravels.com/demo"
-When User enters "mail@gmail.com"
+When User enters "mail1@gmail.com"
 And clicks subscribe button
 Then Newsletter should be subscribed
 
 @demoReq
 Scenario: Validate user can request for demo with valid details
 Given User navigates to "https://www.phptravels.com/demo"
+
 When User enters below information
 |	firstName			|	Hari				|
 |	lastName			|	gates				|

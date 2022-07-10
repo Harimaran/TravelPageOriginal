@@ -5,6 +5,7 @@ Scenario: User register with valid details
 Given User navigates to "https://www.phptravels.com/demo"
 And User clicks on Sign Up button
 When User Enters all the required details
+
 #|	firstName	|	Hari						|
 #|	lastName	|	Prasath					|
 #|	eMail			|	hari@email.com	|

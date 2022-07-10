@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 		glue = "testScripts",
 		dryRun = false,
 		monochrome = true,
-		tags = "not @newsletter",
+//		tags = "@newsletter",
 		plugin= "html:target/logIn.html"
 		)
 
